@@ -6,7 +6,7 @@
       "value": "jenkinspipeline"
     },
     "virtualNetworkName": {
-      "value": "jenkins_net"
+      "value": "jenkinsnet"
     },
     "adminUsername": {
       "value": "sysadmin"

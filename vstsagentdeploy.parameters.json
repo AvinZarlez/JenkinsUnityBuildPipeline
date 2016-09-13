@@ -1,0 +1,39 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmIPPublicDnsName": {
+      "value": "vstsagent"
+    },
+    "storageType": {
+      "value": "Standard_LRS"
+    },
+    "vmName": {
+      "value": "vstsagentvm"
+    },
+    "vmAdminUserName": {
+      "value": "sysadmin"
+    },
+    "vmAdminPassword": {
+      "value": "FancyPassword!@#"
+    },
+    "vmSize": {
+      "value": "Standard_DS2"
+    },
+    "vmVisualStudioVersion": {
+      "value": "VS-2015-Comm-AzureSDK-2.9-WS2012R2"
+    },
+    "vsoAccount": {
+      "value": "usdxhackathon-devops"
+    },
+    "vsoUser": {
+      "value": "christinematheney@outlook.com"
+    },
+    "vsoPass": {
+      "value": "1Microsoft!"
+    },
+    "poolName": {
+      "value": "NewPoolForUnity"
+    }
+  }
+}

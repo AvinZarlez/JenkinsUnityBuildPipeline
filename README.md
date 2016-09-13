@@ -16,6 +16,8 @@ Automatically create new builds for a Unity app whenever code changes on GitHub.
 
 ## Pipeline steps
 
+![Build Pipeline Drawing](pipeline.jpg "Jenkins Unity Build Pipeline")
+
 ### Step 1: GitHub
 
 Commit code to GitHub Repo https://github.com/TobiahZ/DumbGame

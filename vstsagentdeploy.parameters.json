@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vmIPPublicDnsName": {
-      "value": "GEN-UNIQUE"
+      "value": "vstsagent"
     },
     "storageType": {
       "value": "Standard_LRS"

@@ -61,7 +61,7 @@ The appxupload file created in substep 2 is then uploaded to HockeyApp
 
 ### Step 5: Distribute to users
 
-HockeyApp then distributes the appropiate app file to our users/testers.
+HockeyApp then distributes the appropiate app file to our users/testers. Basically, each time a build is successful, an updated version of the app appears for them to download in hockey app. 
 
 ## Recreation process
 
@@ -87,3 +87,6 @@ HockeyApp then distributes the appropiate app file to our users/testers.
     * The project contains a git repo for the Windows Phone Visual Studio project
     * Build process to build the Visual Studio Solution
     * Pushes VS builds onto HockeyApp
+* Hockey App
+    * Hosts projects for each app type (Android & Windows)
+    * Invite users to the projects and provide them downloads 

@@ -1,5 +1,11 @@
 # Jenkins Unity Build Pipeline
 
+Team members:
+
+* Jennelle Crothers
+* Christine Matheney
+* Tobiah Zarlez
+
 ## Problem
 
 The process to build and distribute an app takes too much manual labor. Let’s automate it!
@@ -76,4 +82,8 @@ Required items:
     * GitHub
 * GitHub
     * Contains main unity project
-* 
+* Visual Studio Team Services
+    * Contains a project for the game
+    * The project contains a git repo for the Windows Phone Visual Studio project
+    * Build process to build the Visual Studio Solution
+    * Pushes VS builds onto HockeyApp

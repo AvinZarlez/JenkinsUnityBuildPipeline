@@ -65,8 +65,6 @@ HockeyApp then distributes the appropiate app file to our users/testers.
 
 ## Recreation process
 
-Required items:
-
 * Windows Agent/Virtual machine with the following installed:
     * Jenkins
     * Unity
@@ -74,6 +72,7 @@ Required items:
     * JDK
     * Windows Phone SDK
     * Visual Studio
+    * Visual Studio Team Services Agent
 * Jenkins must have the following plugins:
     * HockeyApp https://wiki.jenkins-ci.org/display/JENKINS/HockeyApp+Plugin
     * Unity3dBuilder https://wiki.jenkins-ci.org/display/JENKINS/Unity3dBuilder+Plugin
@@ -81,7 +80,8 @@ Required items:
     * Visual Studio Team Services https://github.com/jenkinsci/tfs-plugin/blob/master/README.md
     * GitHub
 * GitHub
-    * Contains main unity project
+    * DumbGame - Contains main unity project
+    * JenkinsUnityPipeline - Contains templates for Azure VMs for Jenkins/VSTS Agent
 * Visual Studio Team Services
     * Contains a project for the game
     * The project contains a git repo for the Windows Phone Visual Studio project

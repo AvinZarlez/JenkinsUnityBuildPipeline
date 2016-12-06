@@ -100,7 +100,7 @@
     "whichSubnet": {
       "type": "string",
       "defaultValue": "Subnet1"
-    },
+    }
    },
       
     "variables": {

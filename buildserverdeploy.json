@@ -300,29 +300,9 @@
           }
         }
         }
-      },
-      
-      {
-   "type": "Microsoft.Compute/virtualMachines/extensions",
-   "name" : "[concat(parameters('vmName'),'/FileCopy')]",
-   "apiVersion": "2015-06-15",
-   "location" : "[resourceGroup().location]",
-   "dependsOn": [
-       "[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'))]"
-   ],
-   "properties": {
-       "publisher": "Microsoft.Compute",
-       "type": "CustomScriptExtension",
-       "typeHandlerVersion": "1.7",
-       "autoUpgradeMinorVersion":true,
-       "settings": {
-           "fileUris": [
-           "https://imperfectlab.blob.core.windows.net/files/VMscript.ps1"
-       ],
-       "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File VMscript.ps1"
-     }
-   }
       }
+      
+
     
       ]
 

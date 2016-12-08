@@ -5,7 +5,7 @@
    "parameters": {
     "newStorageAccountName": {
       "type": "string",
-      "defaultValue": "buildserverstor01",
+      "defaultValue": "buildserverstor",
       "metadata": {
         "description": "Unique DNS Name for the Storage Account where the Virtual Machine's disks will be placed."
       }
@@ -100,7 +100,7 @@
     "whichSubnet": {
       "type": "string",
       "defaultValue": "Subnet1"
-    },
+    }
    },
       
     "variables": {
@@ -301,28 +301,34 @@
         }
         }
       },
-      
+
       {
-   "type": "Microsoft.Compute/virtualMachines/extensions",
-   "name" : "[concat(parameters('vmName'),'/FileCopy')]",
-   "apiVersion": "2015-06-15",
-   "location" : "[resourceGroup().location]",
-   "dependsOn": [
-       "[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'))]"
-   ],
-   "properties": {
-       "publisher": "Microsoft.Compute",
-       "type": "CustomScriptExtension",
-       "typeHandlerVersion": "1.7",
-       "autoUpgradeMinorVersion":true,
-       "settings": {
-           "fileUris": [
-           "https://imperfectlab.blob.core.windows.net/files/VMscript.ps1"
-       ],
-       "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File VMscript.ps1"
-     }
-   }
-      }
+            
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "Microsoft.Powershell.DSC",
+      "apiVersion": "2016-03-30",
+      "location": "westus",
+      "properties": {
+           "publisher": "Microsoft.Powershell",
+           "type": "DSC",
+           "typeHandlerVersion": "2.19",
+           "autoUpgradeMinorVersion": false,
+           "settings": {
+                 "ModulesUrl": "http://githuburl",
+                 "ConfigurationFunction": "BuildServer.ps1\\BuildServer",
+                 "Properties": [],
+                 "Privacy": {
+                     "DataCollection": null
+                    }
+                }
+                
+            },
+            "resources": [],
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('newStorageAccountName'))]"
+            ]
+        }
     
       ]
 

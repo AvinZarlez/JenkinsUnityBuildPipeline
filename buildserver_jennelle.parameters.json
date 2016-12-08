@@ -9,7 +9,7 @@
           "value": "West US"
       },
       "publicIPAddressName": {
-        "value": "buildvmpubip"
+        "value": "jkcbuildvmpubip"
     },
       "dnsNameForPublicIP": {
          "value": "jennellebuilds"

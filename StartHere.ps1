@@ -21,11 +21,10 @@ New-AzureRmResourceGroup -Name $RGName -Location "West US"
 
 $assetLocation = "https://github.com/TobiahZ/JenkinsUnityBuildPipeline/blob/master/" 
 $templateFileLoc  = $assetLocation + "buildserverdeploy.json" 
-$parameterFileLoc = "C:\users\jcroth\Desktop\jennelle.parameters.json"
 
 # Step 4 #
 # Deploy the build server to your Azure Subscription #
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -TemplateParameterFile $parameterFileLoc -TemplateUri $templateFileLoc -verbose
+New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -TemplateUri $templateFileLoc -verbose
 
 

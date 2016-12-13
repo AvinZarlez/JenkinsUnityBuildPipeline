@@ -20,19 +20,12 @@ New-AzureRmResourceGroup -Name $RGName -Location "West US"
 # You will be deploying directly from Github - https://github.com/TobiahZ/JenkinsUnityBuildPipeline/blob/master/buildserverdeploy.json""
 
 $assetLocation = "https://github.com/TobiahZ/JenkinsUnityBuildPipeline/blob/master/" 
-$templateFileURI  = $assetLocation + "buildserverdeploy.json" 
-$parameterFile = "C:\users\jcroth\Desktop\jennelle.parameters.json"
+$templateFileLoc  = $assetLocation + "buildserverdeploy.json" 
+$parameterFileLoc = "C:\users\jcroth\Desktop\jennelle.parameters.json"
 
 # Step 4 #
 # Deploy the build server to your Azure Subscription #
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -TemplateParameterFile $parameterFile -TemplateUri $templateFileURI -verbose
-
-
-
-#Copy required DSC resources to local machine
-
-Save-Module -Name cChoco -Path 'C:\Program Files (x86)'
-Install-Module -Name cChoco
+New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -TemplateParameterFile $parameterFileLoc -TemplateUri $templateFileLoc -verbose
 
 

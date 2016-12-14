@@ -12,14 +12,14 @@ Get-AzureRmSubscription
 $VSSubID = "8bae2860-70c1-4614-xxxx-60e97f4248dc"
 Set-AzureRmContext -SubscriptionID $VSSubID
 
-$RGName = "BuildServer"   
+$RGName = "BuildServer6"   
 New-AzureRmResourceGroup -Name $RGName -Location "West US" 
 
 # Step 3 #
 # Set the variable to deploy the server template #
 # You will be deploying directly from Github - https://github.com/TobiahZ/JenkinsUnityBuildPipeline/blob/master/buildserverdeploy.json""
 
-$assetLocation = "https://github.com/TobiahZ/JenkinsUnityBuildPipeline/blob/master/" 
+$assetLocation = "https://raw.githubusercontent.com/TobiahZ/JenkinsUnityBuildPipeline/InfraDev/" 
 $templateFileLoc  = $assetLocation + "buildserverdeploy.json" 
 
 # Step 4 #

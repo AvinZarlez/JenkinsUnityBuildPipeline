@@ -18,14 +18,27 @@
          Name = "git"
          DependsOn = "[cChocoInstaller]installChoco"
       }
+
+     cChocoPackageInstaller installJenkins
+      {
+         Ensure = 'Present'
+         Name = "jenkins"
+         DependsOn = "[cChocoInstaller]installChoco"
+      }
+      cChocoPackageInstaller installUninty
+      {
+         Ensure = 'Present'
+         Name = "unity"
+         DependsOn = "[cChocoInstaller]installChoco"
+      }
       xIEEsc EnableIEEscAdmin
         {
-            IsEnabled = $True
+            IsEnabled = $False
             UserRole  = "Administrators"
         }
         xIEEsc EnableIEEscUser
         {
-            IsEnabled = $False
+            IsEnabled = $True
             UserRole  = "Users"
         }
 

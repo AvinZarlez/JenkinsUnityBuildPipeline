@@ -5,7 +5,6 @@
    "parameters": {
     "newStorageAccountName": {
       "type": "string",
-      "defaultValue": "buildserverstor",
       "metadata": {
         "description": "Unique DNS Name for the Storage Account where the Virtual Machine's disks will be placed."
       }
@@ -55,14 +54,12 @@
     },
     "windowsOSVersion": {
       "type": "string",
-      "defaultValue": "VS-2015-Comm-AzureSDK-2.9-WS2012R2",
+      "defaultValue": "VS-2015-Comm-VSU3-AzureSDK-291-WS2012R2",
       "allowedValues": [
-        "2012-Datacenter",
-        "2012-R2-Datacenter",
-        "Windows-Server-Technical-Preview",
         "2016-Datacenter",
         "2016-Nano-Server",
-        "VS-2015-Comm-AzureSDK-2.9-WS2012R2"
+        "VS-2015-Comm-AzureSDK-2.9-WS2012R2",
+        "VS-2015-Comm-VSU3-AzureSDK-291-WS2012R2"
       ]
     },
     "adminUsername": {
@@ -78,16 +75,17 @@
       }
     },
     "dnsNameForPublicIP": {
-      "type": "string",
-      "defaultValue": "buildvm"
+      "type": "string"
     },
+
     "nicName": {
       "type": "string",
       "defaultValue": "buildserver_nic1"
     },
     "publicIPAddressName": {
       "type": "string",
-      "defaultValue": "buildvmpubip"
+      "defaultValue": "buildsrv_pubip"
+
     },
     "vmName": {
       "type": "string",
@@ -305,7 +303,7 @@
       {
             
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "Microsoft.Powershell.DSC",
+      "name": "[concat(parameters('vmName'),'/Microsoft.Powershell.DSC')]",
       "apiVersion": "2016-03-30",
       "location": "westus",
       "properties": {
@@ -314,8 +312,8 @@
            "typeHandlerVersion": "2.19",
            "autoUpgradeMinorVersion": false,
            "settings": {
-                 "ModulesUrl": "http://githuburl",
-                 "ConfigurationFunction": "BuildServer.ps1\\BuildServer",
+                 "ModulesUrl": "https://raw.githubusercontent.com/TobiahZ/JenkinsUnityBuildPipeline/master/BuildServerDSCconfig.ps1.zip",
+                 "ConfigurationFunction": "BuildServerDSCconfig.ps1\\BuildServer",
                  "Properties": [],
                  "Privacy": {
                      "DataCollection": null

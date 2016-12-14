@@ -312,7 +312,7 @@
            "typeHandlerVersion": "2.19",
            "autoUpgradeMinorVersion": false,
            "settings": {
-                 "ModulesUrl": "https://raw.githubusercontent.com/TobiahZ/JenkinsUnityBuildPipeline/InfraDev/BuildServerDSCconfig.ps1.zip",
+                 "ModulesUrl": "https://raw.githubusercontent.com/TobiahZ/JenkinsUnityBuildPipeline/master/BuildServerDSCconfig.ps1.zip",
                  "ConfigurationFunction": "BuildServerDSCconfig.ps1\\BuildServer",
                  "Properties": [],
                  "Privacy": {

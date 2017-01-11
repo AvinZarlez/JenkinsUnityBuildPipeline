@@ -25,7 +25,7 @@
          Name = "jenkins"
          DependsOn = "[cChocoInstaller]installChoco"
       }
-      cChocoPackageInstaller installUninty
+      cChocoPackageInstaller installUnity
       {
          Ensure = 'Present'
          Name = "unity"
